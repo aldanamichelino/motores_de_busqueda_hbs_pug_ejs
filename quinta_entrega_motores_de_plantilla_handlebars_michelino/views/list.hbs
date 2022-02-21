@@ -1,0 +1,22 @@
+  <div class="d-flex flex-column justify-content-center align-items-center jumbotron w-100 h-100">
+    <h4>Vista de productos</h4>
+    {{#if list}}
+      <table class="table">
+        <tr class="text-center">
+          <th class="orange-500">Nombre</th>
+          <th class="orange-500">Precio</th>
+          <th class="orange-500">Foto</th>
+        </tr>
+        {{#each products}}
+            <tr class="text-center">
+              <td>{{this.name}}</td>
+              <td>{{this.price}}</td>
+              <td><img src={{this.imageUrl}} alt={{this.name}} style="max-width: 100px; border-radius: 25px"></td>
+            </tr>
+        {{/each}}
+      </table>
+    {{else}}
+      <h3 class="bg-danger p-2">No hay productos</h3>
+    {{/if}}
+    <button class="bg-warning"><a href="/">Volver al formulario</a></button>
+  </div>

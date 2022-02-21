@@ -1,0 +1,23 @@
+extends ./layout
+
+block productList
+    div(class="d-flex flex-column justify-content-center align-items-center jumbotron w-100 h-100")
+        h4 Vista de productos
+        if products.length > 0
+            table(class="table")
+                tr(class="text-center")
+                    th(class="orage-500") Nombre
+                    th(class="orage-500") Precio
+                    th(class="orage-500") Imagen
+
+                each item in products
+                    tr(class="text-center")
+                        td= item.name
+                        td= item.price
+                        td
+                            img(src=item.imageUrl alt=item.id style="max-width: 100px; border-radius: 25px")
+        else
+            h3(class="bg-danger p-2") No hay productos
+
+        button(class="bg-warning")
+            a(href="/") Volver al formulario
